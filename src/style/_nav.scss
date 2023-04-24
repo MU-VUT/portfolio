@@ -1,0 +1,47 @@
+@use "variables" as *;
+nav {
+  max-width: 60vw;
+  margin: 50px;
+}
+
+.nav-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  list-style: none;
+  align-items: center;
+}
+
+.nav-item {
+  width: 120px;
+  margin: 0 20px;
+  background-color: transparent;
+  border: none;
+  color: $fontColor;
+  font-size: 22px;
+  text-transform: uppercase;
+  font-family: $fontPrimary;
+  letter-spacing: 0.05em;
+  transition: 0.3s;
+  &:hover {
+    color: $secondaryColor;
+    transform: scale(1.15);
+    cursor: pointer;
+  }
+}
+
+.active-item {
+  color: $secondaryColor;
+  transform: scale(1.15);
+}
+
+.nav-logo {
+  font-size: 60px;
+  &:hover {
+    transform: scale(1);
+  }
+}
+
+.active-logo {
+  color: $secondaryColor;
+}

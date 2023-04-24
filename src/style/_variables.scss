@@ -1,0 +1,43 @@
+@use "sass:map";
+// Color variables
+$bgColor: #12355b;
+$bgColorDark: #0f2c4c;
+$fontColor: #dcc48e;
+$primaryColor: #a13d63;
+$secondaryColor: #2ebfa5;
+$black: #000000;
+$white: #ffffff;
+$grey: #c6c6c6;
+$shadow: rgba($fontColor, 0.25);
+// Font variables
+@font-face {
+  font-family: "FjallaOne";
+  src: url(/style/font/FjallaOne-Regular.ttf);
+}
+
+@font-face {
+  font-family: "Cantarell";
+  src: url(/style/font/Cantarell-Regular.ttf);
+}
+
+$fontPrimary: "FjallaOne", "Cantarell", sans-serif;
+$fontSecondary: "Cantarell", sans-serif;
+// Media querries
+$breakpoints: (
+  small: 576px,
+  medium: 768px,
+  large: 1440px,
+);
+@mixin mq($key) {
+  $size: map.get($breakpoints, $key);
+  @media (min-width: $size) {
+    @content;
+  }
+}
+
+@mixin mqmax($key) {
+  $size: map.get($breakpoints, $key);
+  @media screen and (max-width: $size) {
+    @content;
+  }
+}

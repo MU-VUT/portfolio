@@ -1,0 +1,33 @@
+@use "variables" as *;
+
+.about {
+  padding-top: 50px;
+  position: relative;
+
+  .big {
+    position: absolute;
+    margin: auto;
+    top: 50%;
+    right: 50%;
+  }
+  .inner {
+    width: 400px;
+    height: 200px;
+    background-color: $primaryColor;
+    border-radius: 7px;
+    margin: auto;
+    padding: 30px;
+    color: $white;
+    animation: container-scale 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+
+    h2 {
+      font-family: $fontPrimary;
+      font-size: 24px;
+      letter-spacing: 0.03em;
+    }
+    p {
+      margin-top: 0.5em;
+      font-family: $fontSecondary;
+    }
+  }
+}

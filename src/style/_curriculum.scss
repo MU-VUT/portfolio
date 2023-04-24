@@ -1,0 +1,136 @@
+@use "variables" as *;
+.cv {
+  display: flex;
+  justify-content: center;
+  gap: 100px;
+}
+
+.cv-flex {
+  width: 250px;
+  &-header {
+    color: $fontColor;
+    text-transform: uppercase;
+    font-family: $fontPrimary;
+    font-size: 32px;
+    letter-spacing: 0.05em;
+    margin-bottom: 3rem;
+    font-weight: 500;
+    text-align: right;
+    animation: container-scale 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  }
+  &-items {
+    animation: scale-in-ver-top 1.5s ease-in-out both;
+  }
+}
+
+.cv-item {
+  text-align: right;
+  position: relative;
+
+  &-header {
+    text-transform: uppercase;
+    font-family: $fontPrimary;
+    letter-spacing: 0.025em;
+    font-weight: 400;
+    margin-bottom: 0.5rem;
+  }
+  &-desc {
+    font-family: $fontSecondary;
+    margin-bottom: 50px;
+    color: $grey;
+  }
+  &-circle {
+    position: absolute;
+    right: -85px;
+    top: 0;
+    width: 15px;
+    height: 15px;
+    background-color: $primaryColor;
+    border-radius: 50%;
+    border: 3px solid $secondaryColor;
+  }
+  &-line {
+    position: absolute;
+    right: -280px;
+    top: -95px;
+    width: 200px;
+    height: 200px;
+    border: solid 3px $secondaryColor;
+    border-color: transparent transparent transparent $secondaryColor;
+    border-radius: 120px 0 0 120px;
+  }
+}
+
+.line {
+  width: 10px;
+  text-align: center;
+  background-color: $secondaryColor;
+  position: relative;
+  animation: scale-in-ver-top 1.5s ease-in-out both;
+
+  &-circle {
+    position: absolute;
+    top: -30px;
+    left: -14px;
+    width: 30px;
+    height: 30px;
+    background-color: $primaryColor;
+    border-radius: 50%;
+    border: 4px solid $secondaryColor;
+  }
+}
+
+.skills-flex {
+  width: 250px;
+
+  &-header {
+    color: $fontColor;
+    text-transform: uppercase;
+    font-family: $fontPrimary;
+    font-size: 32px;
+    letter-spacing: 0.05em;
+    margin-bottom: 3rem;
+    font-weight: 500;
+    animation: container-scale 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  }
+  &-items {
+    animation: scale-in-ver-top 1.5s ease-in-out both;
+  }
+}
+
+.skills-item {
+  position: relative;
+
+  &-header {
+    text-transform: uppercase;
+    font-family: $fontPrimary;
+    letter-spacing: 0.025em;
+    font-weight: 400;
+    margin-bottom: 0.5rem;
+  }
+  &-desc {
+    font-family: $fontSecondary;
+    margin-bottom: 50px;
+    color: $grey;
+  }
+  &-circle {
+    position: absolute;
+    left: -85px;
+    top: 0;
+    width: 15px;
+    height: 15px;
+    background-color: $primaryColor;
+    border-radius: 50%;
+    border: 3px solid $secondaryColor;
+  }
+  &-line {
+    position: absolute;
+    left: -280px;
+    top: -95px;
+    width: 200px;
+    height: 200px;
+    border: solid 3px $secondaryColor;
+    border-color: transparent $secondaryColor transparent transparent;
+    border-radius: 0 120px 120px 0;
+  }
+}
