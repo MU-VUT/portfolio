@@ -10,6 +10,37 @@ nav {
   justify-content: space-evenly;
   list-style: none;
   align-items: center;
+
+  @include mqmax(large) {
+    flex-direction: column;
+    gap: 10px;
+  }
+  &-responsive {
+    display: none;
+  }
+}
+
+.responsive-button {
+  width: 120px;
+  margin: 0 20px;
+  background-color: transparent;
+  border: none;
+  color: $fontColor;
+  font-size: 28px;
+  text-transform: uppercase;
+  font-family: $fontPrimary;
+  letter-spacing: 0.05em;
+  transition: 0.3s;
+  margin-bottom: 20px;
+  &:hover {
+    color: $secondaryColor;
+    transform: scale(1.15);
+    cursor: pointer;
+  }
+
+  @include mq(large) {
+    display: none;
+  }
 }
 
 .nav-item {

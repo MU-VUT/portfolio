@@ -8,11 +8,18 @@ for (let i = 0; i < Math.floor(Math.random() * (7 - 5 + 1)) + 5; i++) {
 }
 
 function About() {
+  if (window.innerWidth > 1440) {
+    return (
+      <div className="about">
+        {numbers.map((number) => (
+          <Ellipse key={number} number={number} />
+        ))}
+        <Inner />
+      </div>
+    );
+  }
   return (
     <div className="about">
-      {numbers.map((number) => (
-        <Ellipse key={number} number={number} />
-      ))}
       <Inner />
     </div>
   );
@@ -21,7 +28,15 @@ function About() {
 function Inner() {
   return (
     <div className="inner" style={{ zIndex: 10 }}>
-      <h2> Hi, my name is Michal. </h2> <p> I am Front End Web Developer...doctor </p>{" "}
+      <h2> Hi, my name is Michal. </h2>{" "}
+      <p>
+        I am Front-end Developer from Brno, currently studying PhD in the fileld of Smart Logistic
+        Technologies.
+      </p>
+      <p>
+        I am interested in modern web technologies and web applications. I like to push things and
+        bounderies of knowledge forward.
+      </p>{" "}
     </div>
   );
 }
@@ -57,7 +72,6 @@ for (let i = 0; i < numbers.length; i++) {
   b.push(Math.floor(Math.random() * (450 - 150 + 1)) + 150); //Size of minor axis
   randomS.push(Math.floor(Math.random() * (s - 0 + 1)) + 0);
 }
-console.log(randomS);
 // Elipse array of coordinates
 
 // creating two-dimensional array for x-pos
@@ -104,6 +118,7 @@ const Ellipse = ({ number }) => {
   return (
     <motion.div
       onMouseEnter={handleHover}
+      initial={{ opacity: 0 }}
       animate={{ opacity: active ? 0 : 1 }}
       transition={{ type: "spring", stiffness: 50 }}>
       <motion.div
@@ -112,7 +127,7 @@ const Ellipse = ({ number }) => {
           height: height[number],
           borderRadius: radius[number],
           backgroundColor: color[number],
-          zIndex: zIndex[number],
+          // zIndex: zIndex[number],
         }}
         animate={{ x: slicedX[number], y: slicedY[number] }}
         transition={{

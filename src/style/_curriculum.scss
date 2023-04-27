@@ -3,10 +3,19 @@
   display: flex;
   justify-content: center;
   gap: 100px;
+  @include mqmax(large) {
+    flex-direction: column;
+    gap: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
 }
 
 .cv-flex {
   width: 250px;
+  @include mqmax(large) {
+    width: 100%;
+  }
   &-header {
     color: $fontColor;
     text-transform: uppercase;
@@ -16,16 +25,22 @@
     margin-bottom: 3rem;
     font-weight: 500;
     text-align: right;
-    animation: container-scale 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+    @include mqmax(large) {
+      text-align: left;
+    }
+    // animation: container-scale 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
   }
   &-items {
-    animation: scale-in-ver-top 1.5s ease-in-out both;
+    // animation: scale-in-ver-top 1.5s ease-in-out both;
   }
 }
 
 .cv-item {
   text-align: right;
   position: relative;
+  @include mqmax(large) {
+    text-align: left;
+  }
 
   &-header {
     text-transform: uppercase;
@@ -33,8 +48,15 @@
     letter-spacing: 0.025em;
     font-weight: 400;
     margin-bottom: 0.5rem;
+    color: $secondaryColor;
   }
   &-desc {
+    letter-spacing: 0.025em;
+    font-weight: 1000;
+    font-family: $fontSecondary;
+    color: $white;
+  }
+  &-misc {
     font-family: $fontSecondary;
     margin-bottom: 50px;
     color: $grey;
@@ -48,6 +70,9 @@
     background-color: $primaryColor;
     border-radius: 50%;
     border: 3px solid $secondaryColor;
+    @include mqmax(large) {
+      display: none;
+    }
   }
   &-line {
     position: absolute;
@@ -58,6 +83,9 @@
     border: solid 3px $secondaryColor;
     border-color: transparent transparent transparent $secondaryColor;
     border-radius: 120px 0 0 120px;
+    @include mqmax(large) {
+      display: none;
+    }
   }
 }
 
@@ -66,7 +94,7 @@
   text-align: center;
   background-color: $secondaryColor;
   position: relative;
-  animation: scale-in-ver-top 1.5s ease-in-out both;
+  // animation: scale-in-ver-top 1.5s ease-in-out both;
 
   &-circle {
     position: absolute;
@@ -82,6 +110,9 @@
 
 .skills-flex {
   width: 250px;
+  @include mqmax(large) {
+    width: 100%;
+  }
 
   &-header {
     color: $fontColor;
@@ -91,15 +122,21 @@
     letter-spacing: 0.05em;
     margin-bottom: 3rem;
     font-weight: 500;
-    animation: container-scale 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+    @include mqmax(large) {
+      text-align: right;
+    }
+    // animation: container-scale 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
   }
   &-items {
-    animation: scale-in-ver-top 1.5s ease-in-out both;
+    // animation: scale-in-ver-top 1.5s ease-in-out both;
   }
 }
 
 .skills-item {
   position: relative;
+  @include mqmax(large) {
+    text-align: right;
+  }
 
   &-header {
     text-transform: uppercase;
@@ -107,8 +144,15 @@
     letter-spacing: 0.025em;
     font-weight: 400;
     margin-bottom: 0.5rem;
+    color: $secondaryColor;
   }
   &-desc {
+    letter-spacing: 0.025em;
+    font-weight: 1000;
+    font-family: $fontSecondary;
+    color: $white;
+  }
+  &-misc {
     font-family: $fontSecondary;
     margin-bottom: 50px;
     color: $grey;
@@ -122,6 +166,9 @@
     background-color: $primaryColor;
     border-radius: 50%;
     border: 3px solid $secondaryColor;
+    @include mqmax(large) {
+      display: none;
+    }
   }
   &-line {
     position: absolute;
@@ -132,5 +179,8 @@
     border: solid 3px $secondaryColor;
     border-color: transparent $secondaryColor transparent transparent;
     border-radius: 0 120px 120px 0;
+    @include mqmax(large) {
+      display: none;
+    }
   }
 }

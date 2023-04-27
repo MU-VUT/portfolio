@@ -1,63 +1,83 @@
-import React from "react";
+import React, { useState } from "react";
+import { motion } from "framer-motion";
 
-class Nav extends React.Component {
-  render() {
-    return (
-      <nav>
-        <ul id="navList" className="nav-list">
-          <NavButton
-            value="Projects"
-            activePage={this.props.activePage}
-            onClick={() => this.props.handleClick("Projects")}
-          />{" "}
-          <NavButton
-            value="Curriculum"
-            activePage={this.props.activePage}
-            onClick={() => this.props.handleClick("Curriculum")}
-          />{" "}
-          <NavLogo
-            value="{MU}"
-            activePage={this.props.activePage}
-            onClick={() => this.props.handleClick("About")}
-          />{" "}
-          <NavButton value="GitHub" onClick={() => this.props.handleClick("GitHub")} />{" "}
-          <NavButton value="LinkedIn" onClick={() => this.props.handleClick("LinkedIn")} />{" "}
-        </ul>{" "}
-      </nav>
-    );
+const Nav = ({ activePage, handleClick }) => {
+  const [resNavActive, setResNavActive] = useState(true);
+  const about = window.innerWidth > 1440 ? "{MU}" : "About";
+  const responsiveButton = "{MU}";
+  let aboutLogo;
+  if (activePage === "about" && about === "{MU}") {
+    aboutLogo = "nav-item nav-logo active-logo";
+  } else if (activePage !== "about" && about === "{MU}") {
+    aboutLogo = "nav-item nav-logo";
+  } else if (activePage === "about" && about === "About") {
+    aboutLogo = "nav-item active-item";
+  } else if (activePage !== "about" && about === "About") {
+    aboutLogo = "nav-item ";
   }
-}
 
-function NavButton(props) {
-  let activeClass = "nav-item";
-  if (props.value === "Projects" && props.activePage === "projects") {
-    activeClass = "nav-item active-item";
-  } else if (props.value === "Curriculum" && props.activePage === "curriculum") {
-    activeClass = "nav-item active-item";
-  }
-  return (
-    <li>
-      <button onClick={props.onClick} value={props.value} className={activeClass}>
-        {" "}
-        {props.value}{" "}
-      </button>{" "}
-    </li>
-  );
-}
+  const variants = {
+    open: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        y: { stiffness: 1000, velocity: -100 },
+      },
+    },
+    closed: {
+      y: -500,
+      opacity: 0,
+      transition: {
+        y: { stiffness: 1000 },
+      },
+    },
+  };
 
-function NavLogo(props) {
   return (
-    <li>
+    <nav>
       <button
-        onClick={props.onClick}
-        value={props.value}
-        className={
-          props.activePage === "about" ? "nav-item nav-logo active-logo" : "nav-item nav-logo"
-        }>
-        {" "}
-        {props.value}{" "}
-      </button>{" "}
-    </li>
+        className="responsive-button"
+        onClick={() => setResNavActive((resNavActive) => !resNavActive)}>
+        {responsiveButton}
+      </button>
+      <motion.ul
+        initial={{ opacity: 0, y: "-100%" }}
+        animate={resNavActive ? "open" : "closed"}
+        variants={variants}
+        id="navList"
+        className="nav-list">
+        <li>
+          <button
+            className={activePage === "projects" ? "nav-item active-item" : "nav-item"}
+            onClick={() => handleClick("Projects")}>
+            Projects
+          </button>
+        </li>
+        <li>
+          <button
+            className={activePage === "curriculum" ? "nav-item active-item" : "nav-item"}
+            onClick={() => handleClick("Curriculum")}>
+            Curriculum
+          </button>
+        </li>
+        <li>
+          <button className={aboutLogo} onClick={() => handleClick("About")}>
+            {about}
+          </button>
+        </li>
+        <li>
+          <button className="nav-item" onClick={() => handleClick("GitHub")}>
+            GitHub
+          </button>
+        </li>
+        <li>
+          <button className="nav-item" onClick={() => handleClick("LinkedIn")}>
+            LinkedIn
+          </button>
+        </li>
+      </motion.ul>
+    </nav>
   );
-}
+};
+
 export default Nav;

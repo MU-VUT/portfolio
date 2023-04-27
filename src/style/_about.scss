@@ -3,22 +3,35 @@
 .about {
   padding-top: 50px;
   position: relative;
+  @include mqmax(large) {
+    padding-top: 0;
+    padding-bottom: 20px;
+  }
 
   .big {
     position: absolute;
     margin: auto;
     top: 50%;
     right: 50%;
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.75);
+    @include mqmax(large) {
+      display: none;
+    }
   }
   .inner {
-    width: 400px;
-    height: 200px;
+    width: 450px;
+    height: auto;
     background-color: $primaryColor;
     border-radius: 7px;
     margin: auto;
     padding: 30px;
     color: $white;
+    text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.5);
     animation: container-scale 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+    @include mqmax(large) {
+      width: 60vw;
+    }
 
     h2 {
       font-family: $fontPrimary;
@@ -28,6 +41,7 @@
     p {
       margin-top: 0.5em;
       font-family: $fontSecondary;
+      text-align: justify;
     }
   }
 }

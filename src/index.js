@@ -6,25 +6,19 @@ import About from "./components/About.js";
 import Projects from "./components/Projects.js";
 import Curriculum from "./components/Curriculum.js";
 
-class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      activePage: "about",
-    };
-    this.handleClick = this.handleClick.bind(this);
-  }
+const App = () => {
+  const [activePage, setActivePage] = useState("about");
 
-  handleClick(param) {
+  function handleClick(param) {
     switch (param) {
       case "Projects":
-        this.setState({ activePage: "projects" });
+        setActivePage("projects");
         break;
       case "Curriculum":
-        this.setState({ activePage: "curriculum" });
+        setActivePage("curriculum");
         break;
       case "About":
-        this.setState({ activePage: "about" });
+        setActivePage("about");
         break;
       case "GitHub":
         window.open("https://github.com/MU-VUT", "_blank");
@@ -38,34 +32,31 @@ class App extends React.Component {
     }
   }
 
-  render() {
-    const activePage = this.state.activePage;
-    let innerApp;
-    switch (activePage) {
-      case "about":
-        innerApp = <About />;
-        break;
+  let innerApp;
+  switch (activePage) {
+    case "about":
+      innerApp = <About />;
+      break;
 
-      case "projects":
-        innerApp = <Projects />;
-        break;
+    case "projects":
+      innerApp = <Projects />;
+      break;
 
-      case "curriculum":
-        innerApp = <Curriculum />;
-        break;
+    case "curriculum":
+      innerApp = <Curriculum />;
+      break;
 
-      default:
-        break;
-    }
-
-    return (
-      <div className="main">
-        <Nav activePage={this.state.activePage} handleClick={this.handleClick} />{" "}
-        <div className="container"> {innerApp} </div>{" "}
-      </div>
-    );
+    default:
+      break;
   }
-}
+
+  return (
+    <div className="main">
+      <Nav activePage={activePage} handleClick={handleClick} />
+      <div className="container"> {innerApp} </div>{" "}
+    </div>
+  );
+};
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(<App />);

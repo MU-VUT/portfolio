@@ -1,108 +1,143 @@
 import React from "react";
-
-//hlavni component
-//3 pod nim
-// CV component
-//  header
-//  itemy
-//   header
-//   desc
-//   grafika
-// Line component
-// Skills component
-//  header
-//  itemy
-//   header
-//   desc
-//   grafika
+import { motion } from "framer-motion";
 
 const cvItems = [
   {
-    name: "2023",
-    desc: "Diplom za plavání1Diplom za plavání1Diplom za plavání1",
+    name: "2022 - now",
+    desc: "Freelance Front-end Web Developer",
   },
-  { name: "2021", desc: "Diplom za plavání2" },
-  { name: "2020", desc: "Diplom za plavání3" },
+  {
+    name: "2020 - now",
+    desc: "PhD in Smart Logistic Technology",
+    misc: "Brno University of Technology",
+  },
+  {
+    name: "2019 - now",
+    desc: "Scientific Researcher",
+    misc: "Brno University of Technology",
+  },
+  {
+    name: "2016 - 2018",
+    desc: "Master Degree in Automotive and Material Handling Engineering",
+    misc: "Brno University of Technology",
+  },
 ];
 
 const skillsItems = [
-  { name: "Front", desc: "popis1" },
-  { name: "Back", desc: "popis2popis2popis2popis2popis2" },
-  { name: "UI/UX", desc: "popis3popis3popis3popis3popis3 popis3popis3popis3popis3popis3popis3" },
+  {
+    name: "front",
+    desc: "HTML5, CSS, Sass, Less, Javascript, React, Framer-Motion, React-Spring, jQuery, Functional programming, SEO, SVG animation",
+  },
+  { name: "back", desc: "Node.js, npm, MongoDB, PHP, SQL, Wordpress, RapidAPI" },
+  { name: "build", desc: "Babel, Webpack, OOP" },
+  { name: "devops", desc: "Docker, Kubernetes" },
+  { name: "methodology", desc: "BEM, Atomic Design" },
+  { name: "science", desc: "MatLab, Simulink, SciLab, Python, LaTeX, R, FEM analysis" },
+  {
+    name: "softwares",
+    desc: "Photoshop, GIMP, Illustrator, Inkscape, Figma, xD, VSCode, Premiere Pro",
+  },
+  { name: "languages", desc: "Czech, English" },
 ];
 
 class Curriculum extends React.Component {
   render() {
+    if (window.innerWidth > 1440) {
+      return (
+        <div className="cv">
+          <CVItems />
+          <Line />
+          <Skills />
+        </div>
+      );
+    }
     return (
       <div className="cv">
         <CVItems />
-        <Line />
         <Skills />
       </div>
     );
   }
 }
 
-class CVItems extends React.Component {
-  render() {
-    return (
-      <div className="cv-flex">
-        <h2 className="cv-flex-header">Curriculum</h2>
-        <div className="cv-flex-items">
-          {cvItems.map((item) => (
-            <CVItem key={item.name} name={item.name} desc={item.desc} />
-          ))}
-        </div>
-      </div>
-    );
-  }
-}
-
-function CVItem(props) {
+const CVItems = () => {
   return (
-    <div className="cv-item">
-      <h3 className="cv-item-header">{props.name}</h3>
-      <p className="cv-item-desc">{props.desc}</p>
-      <div className="cv-item-line"></div>
-      <div className="cv-item-circle"></div>
+    <div className="cv-flex">
+      <motion.h2
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ ease: "easeInOut", duration: 1 }}
+        className="cv-flex-header">
+        Curriculum
+      </motion.h2>
+      <div className="cv-flex-items">
+        {cvItems.map((item, i) => (
+          <motion.div
+            key={i}
+            className="cv-item"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{
+              ease: "easeInOut",
+              duration: cvItems.length,
+              delay: window.innerWidth < 1440 ? 0.3 * i : 2 + 0.3 * i,
+            }}>
+            <h3 className="cv-item-header">{item.name}</h3>
+            <p className="cv-item-desc">{item.desc}</p>
+            <p className="cv-item-misc">{item.misc}</p>
+            <div className="cv-item-line"></div>
+            <div className="cv-item-circle"></div>
+          </motion.div>
+        ))}
+      </div>
     </div>
   );
-}
+};
 
-class Line extends React.Component {
-  render() {
-    return (
-      <div className="line">
-        <div className="line-circle"></div>
-      </div>
-    );
-  }
-}
-
-class Skills extends React.Component {
-  render() {
-    return (
-      <div className="skills-flex">
-        <h2 className="skills-flex-header">Skills</h2>
-        <div className="skills-flex-items">
-          {skillsItems.map((item) => (
-            <SkillsItem key={item.name} name={item.name} desc={item.desc} />
-          ))}
-        </div>
-      </div>
-    );
-  }
-}
-
-function SkillsItem(props) {
+const Line = () => {
   return (
-    <div className="skills-item">
-      <h3 className="skills-item-header">{props.name}</h3>
-      <p className="skills-item-desc">{props.desc}</p>
-      <div className="skills-item-line"></div>
-      <div className="skills-item-circle"></div>
+    <motion.div
+      initial={{ opacity: 0, scaleY: 0, originX: "100%", originY: "0%" }}
+      animate={{ opacity: 1, scaleY: 1, originX: "100%", originY: "0%" }}
+      transition={{ ease: "easeInOut", duration: 2 }}
+      className="line">
+      <div className="line-circle"></div>
+    </motion.div>
+  );
+};
+
+const Skills = () => {
+  return (
+    <div className="skills-flex">
+      <motion.h2
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ ease: "easeInOut", duration: 1 }}
+        className="skills-flex-header">
+        Skills
+      </motion.h2>
+      <div className="skills-flex-items">
+        {skillsItems.map((item, i) => (
+          <motion.div
+            key={i}
+            className="skills-item"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{
+              ease: "easeInOut",
+              duration: cvItems.length,
+              delay: window.innerWidth < 1440 ? 0.3 * i : 2 + 0.3 * i,
+            }}>
+            <h3 className="skills-item-header">{item.name}</h3>
+            <p className="skills-item-desc">{item.desc}</p>
+            <p className="skills-item-misc">{item.misc}</p>
+            <div className="skills-item-line"></div>
+            <div className="skills-item-circle"></div>
+          </motion.div>
+        ))}
+      </div>
     </div>
   );
-}
+};
 
 export default Curriculum;

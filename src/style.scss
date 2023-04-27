@@ -14,7 +14,6 @@
 
 body {
   background: radial-gradient(circle, $bgColorDark 100%, $bgColor 100%);
-  overflow: hidden;
 }
 
 .main {
@@ -31,6 +30,10 @@ body {
   width: 60vw;
   margin-top: auto;
   margin-bottom: auto;
+  @include mqmax(large) {
+    width: 100%;
+    height: auto;
+  }
 }
 
 /**
