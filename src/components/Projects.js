@@ -3,23 +3,66 @@ import React from "react";
 const mainProjects = [
   {
     name: "ESBP 2023",
-    description: "PHP, MYSQL, FIGMA",
+    description: "PHP, MySQL, Figma",
     image: "/img/esbp.JPG",
     link: "https://esbp2023.com/",
   },
-  { name: "Hezký Boudy", description: "popis2", image: "url of image", link: "href" },
-  { name: "VAM", description: "popis3", image: "url of image", link: "href" },
-  { name: "VAM", description: "popis3", image: "url of image", link: "href" },
-  { name: "VAM", description: "popis3", image: "url of image", link: "href" },
-  { name: "VAM", description: "popis3", image: "url of image", link: "href" },
-  { name: "VAM", description: "popis3", image: "url of image", link: "href" },
+  {
+    name: "Hezký Boudy",
+    description: "Adobe xD, Tailwind, UCDC",
+    image: "/img/hb.JPG",
+    link: "https://hezkyboudy.cz/",
+  },
+  {
+    name: "VAM",
+    description: "Vogel's approximation method, JavaScript",
+    image: "/img/vam.JPG",
+    link: "https://mu-vut.github.io/",
+  },
+  {
+    name: "Portfolio",
+    description: "React, Sass, Framer-motion",
+    image: "/img/portfolio.JPG",
+    link: "#",
+  },
+  {
+    name: "Potravinové alergie",
+    description: "Wordpress, Elementor",
+    image: "/img/pa.JPG",
+    link: "https://potravinovealergie.cz/",
+  },
+  {
+    name: "FCH & CESA BUT",
+    description: "WebMaster, Templates",
+    image: "/img/but.JPG",
+    link: "https://www.fch.vut.cz/en/",
+  },
 ];
 const sideProjects = [
-  { name: "Board Game", description: "popis4", image: "url of image", link: "href" },
-  { name: "Video Ad", description: "popis5", image: "url of image", link: "href" },
-  { name: "R&D", description: "popis6", image: "url of image", link: "href" },
-  { name: "R&D", description: "popis6", image: "url of image", link: "href" },
-  { name: "R&D", description: "popis6", image: "url of image", link: "href" },
+  {
+    name: "Board Game",
+    description: "Game design, Graphics, Testing",
+    image: "/img/board.png",
+    link: "href",
+  },
+  {
+    name: "Video Ad",
+    description: "Facebook Reel Ad, Adobe Premiere Pro",
+    image: "/img/video.png",
+    link: "https://drive.google.com/file/d/1ifvmMDmCAmtxKMiNhBonz0uBxbK-bOrY/view?usp=sharing",
+  },
+  {
+    name: "Publications",
+    description: "Smart technologies in freight transport",
+    image: "/img/ig.png",
+    link: "https://orcid.org/0000-0002-4125-0351",
+  },
+  {
+    name: "Pedagogy",
+    description: "Logistics, Transportation, Supporting structures",
+    image: "/img/pedagogy.jpg",
+    link: "https://www.vut.cz/en/people/michal-urbanek-161508/vyuka#navigace-vizitka",
+  },
 ];
 
 class Projects extends React.Component {

@@ -26,12 +26,12 @@ const cvItems = [
 const skillsItems = [
   {
     name: "front",
-    desc: "HTML5, CSS, Sass, Less, Javascript, React, Framer-Motion, React-Spring, jQuery, Functional programming, SEO, SVG animation",
+    desc: "HTML5, CSS, Sass, Tailwind, Bootstrap, Javascript, React, Framer-Motion, React-Spring, jQuery, Functional programming, SEO, SVG animation",
   },
   { name: "back", desc: "Node.js, npm, MongoDB, PHP, SQL, Wordpress, RapidAPI" },
   { name: "build", desc: "Babel, Webpack, OOP" },
   { name: "devops", desc: "Docker, Kubernetes" },
-  { name: "methodology", desc: "BEM, Atomic Design" },
+  { name: "methodology", desc: "BEM, Atomic Design, Systematic approach" },
   { name: "science", desc: "MatLab, Simulink, SciLab, Python, LaTeX, R, FEM analysis" },
   {
     name: "softwares",
