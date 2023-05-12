@@ -5,9 +5,11 @@ import Nav from "./components/Nav.js";
 import About from "./components/About.js";
 import Projects from "./components/Projects.js";
 import Curriculum from "./components/Curriculum.js";
+import Start from "./components/Start.js";
+import GameApp from "./game/Game.js";
 
 const App = () => {
-  const [activePage, setActivePage] = useState("about");
+  const [activePage, setActivePage] = useState("game");
 
   function handleClick(param) {
     switch (param) {
@@ -34,6 +36,14 @@ const App = () => {
 
   let innerApp;
   switch (activePage) {
+    case "start":
+      innerApp = <Start />;
+      break;
+
+    case "game":
+      innerApp = <GameApp />;
+      break;
+
     case "about":
       innerApp = <About />;
       break;
@@ -49,11 +59,17 @@ const App = () => {
     default:
       break;
   }
-
+  if (activePage !== "start") {
+    return (
+      <div className="main">
+        <Nav activePage={activePage} handleClick={handleClick} />
+        <div className="container">{innerApp}</div>{" "}
+      </div>
+    );
+  }
   return (
     <div className="main">
-      <Nav activePage={activePage} handleClick={handleClick} />
-      <div className="container"> {innerApp} </div>{" "}
+      <div className="container">{innerApp}</div>{" "}
     </div>
   );
 };

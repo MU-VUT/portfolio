@@ -1,44 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-
-const cvItems = [
-  {
-    name: "2022 - now",
-    desc: "Freelance Front-end Web Developer",
-  },
-  {
-    name: "2020 - now",
-    desc: "PhD in Smart Logistic Technology",
-    misc: "Brno University of Technology",
-  },
-  {
-    name: "2019 - now",
-    desc: "Scientific Researcher",
-    misc: "Brno University of Technology",
-  },
-  {
-    name: "2016 - 2018",
-    desc: "Master Degree in Automotive and Material Handling Engineering",
-    misc: "Brno University of Technology",
-  },
-];
-
-const skillsItems = [
-  {
-    name: "front",
-    desc: "HTML5, CSS, Sass, Tailwind, Bootstrap, Javascript, React, Framer-Motion, React-Spring, jQuery, Functional programming, SEO, SVG animation",
-  },
-  { name: "back", desc: "Node.js, npm, MongoDB, PHP, SQL, Wordpress, RapidAPI" },
-  { name: "build", desc: "Babel, Webpack, OOP" },
-  { name: "devops", desc: "Docker, Kubernetes" },
-  { name: "methodology", desc: "BEM, Atomic Design, Systematic approach" },
-  { name: "science", desc: "MatLab, Simulink, SciLab, Python, LaTeX, R, FEM analysis" },
-  {
-    name: "softwares",
-    desc: "Photoshop, GIMP, Illustrator, Inkscape, Figma, xD, VSCode, Premiere Pro",
-  },
-  { name: "languages", desc: "Czech, English" },
-];
+import { cvItems, skillsItems } from "./data.js";
 
 class Curriculum extends React.Component {
   render() {
