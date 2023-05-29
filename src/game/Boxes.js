@@ -8,11 +8,9 @@ export default class Boxes extends Phaser.Physics.Arcade.Group {
         this.target = new Phaser.Geom.Point();
     }
 
-    start() {
+    start(xCoord, yCoord) {
         for (let i = 0; i < 5; i++) {
-            this.xCoord = Phaser.Math.RND.between(150, 600);
-            this.yCoord = Phaser.Math.RND.between(100, 500);
-            this.create(this.xCoord, this.yCoord, 'box');
+            this.create(xCoord[i], yCoord[i], 'box');
         }
     }
 

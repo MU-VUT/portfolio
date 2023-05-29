@@ -8,11 +8,9 @@ export default class Obstacles extends Phaser.Physics.Arcade.Group {
         this.target = new Phaser.Geom.Point();
     }
 
-    start() {
-        for (let i = 0; i < 4; i++) {
-            this.xCoord = Phaser.Math.RND.between(150, 600);
-            this.yCoord = Phaser.Math.RND.between(100, 500);
-            this.create(this.xCoord, this.yCoord, 'cone');
+    start(xCoord, yCoord) {
+        for (let i = 5; i < 9; i++) {
+            this.create(xCoord[i], yCoord[i], 'cone');
         }
     }
 

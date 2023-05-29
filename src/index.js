@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import ReactDOM from "react-dom/client";
 import "./style.scss";
 import Nav from "./components/Nav.js";
@@ -9,10 +9,19 @@ import Start from "./components/Start.js";
 import GameApp from "./game/Game.js";
 
 const App = () => {
-  const [activePage, setActivePage] = useState("game");
+  const [activePage, setActivePage] = useState("start");
+
+  useEffect(() => {
+    if (window.location.href.includes("about")) {
+      setActivePage("about");
+    }
+  }, []);
 
   function handleClick(param) {
     switch (param) {
+      case "Game":
+        setActivePage("game");
+        break;
       case "Projects":
         setActivePage("projects");
         break;
@@ -37,7 +46,7 @@ const App = () => {
   let innerApp;
   switch (activePage) {
     case "start":
-      innerApp = <Start />;
+      innerApp = <Start handleClick={handleClick} />;
       break;
 
     case "game":
@@ -59,16 +68,16 @@ const App = () => {
     default:
       break;
   }
-  if (activePage !== "start") {
+  if (activePage === "start" || activePage === "game") {
     return (
       <div className="main">
-        <Nav activePage={activePage} handleClick={handleClick} />
         <div className="container">{innerApp}</div>{" "}
       </div>
     );
   }
   return (
     <div className="main">
+      <Nav activePage={activePage} handleClick={handleClick} />
       <div className="container">{innerApp}</div>{" "}
     </div>
   );

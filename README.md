@@ -1,3 +1,3 @@
 # Portfolio webpage
 
-This project was create with React, Sass, Framer-motion
+This project was create with React, Sass, Framer-motion, Phaser

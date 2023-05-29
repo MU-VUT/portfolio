@@ -1,6 +1,6 @@
 import React from "react";
 
-const Start = () => {
+const Start = ({ handleClick }) => {
   var logo = "{MU}";
   return (
     <div className="start">
@@ -8,10 +8,10 @@ const Start = () => {
       <h2>Welcome to my personal page!</h2>
       <ul>
         <li>
-          <button>Start the Game!</button>
+          <button onClick={() => handleClick("Game")}>Start the Game!</button>
         </li>
         <li>
-          <button>Skip to portfolio</button>
+          <button onClick={() => handleClick("About")}>Skip to portfolio</button>
         </li>
       </ul>
     </div>

@@ -14,6 +14,7 @@ export default class Player extends Phaser.Physics.Arcade.Image {
 
         this.speed = 200;
         this.target = new Phaser.Math.Vector2();
+        this.setDepth(1);
     }
 
     start() {

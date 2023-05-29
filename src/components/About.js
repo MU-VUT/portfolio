@@ -11,9 +11,10 @@ function About() {
   if (window.innerWidth > 1440) {
     return (
       <div className="about">
+        {" "}
         {numbers.map((number) => (
           <Ellipse key={number} number={number} />
-        ))}
+        ))}{" "}
         <Inner />
       </div>
     );
@@ -30,12 +31,12 @@ function Inner() {
     <div className="inner" style={{ zIndex: 10 }}>
       <h2> Hi, my name is Michal. </h2>{" "}
       <p>
-        I am Front-end Developer from Brno, currently studying PhD in the fileld of Smart Logistic
-        Technologies.
-      </p>
+        I am Front - end Developer from Brno, currently studying PhD in the field of Smart Logistic
+        Technologies.{" "}
+      </p>{" "}
       <p>
         I am interested in modern web technologies and web applications. I like to push things and
-        bounderies of knowledge forward.
+        bounderies of knowledge forward.{" "}
       </p>{" "}
     </div>
   );
@@ -135,7 +136,9 @@ const Ellipse = ({ number }) => {
           repeat: Infinity,
           duration: speeds[number],
         }}
-        className={"big"}></motion.div>
+        className={"big"}>
+        {" "}
+      </motion.div>{" "}
     </motion.div>
   );
 };
