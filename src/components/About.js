@@ -36,7 +36,7 @@ function Inner() {
       </p>{" "}
       <p>
         I am interested in modern web technologies and web applications. I like to push things and
-        bounderies of knowledge forward.{" "}
+        boundaries of knowledge forward.{" "}
       </p>{" "}
     </div>
   );
