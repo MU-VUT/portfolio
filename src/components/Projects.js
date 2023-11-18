@@ -1,5 +1,7 @@
 import React from "react";
 import { mainProjects, sideProjects } from "./data.js";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
 
 class Projects extends React.Component {
   constructor(props) {
@@ -30,6 +32,7 @@ class Projects extends React.Component {
               handleToggleClick={this.handleToggleClick}
               description={project.description}
               image={project.image}
+              placeholder={project.placeholder}
               link={project.link}
             />
           ))}{" "}
@@ -45,6 +48,7 @@ class Projects extends React.Component {
               handleToggleClick={this.handleToggleClick}
               description={project.description}
               image={project.image}
+              placeholder={project.placeholder}
               link={project.link}
             />
           ))}{" "}
@@ -63,13 +67,15 @@ class Project extends React.Component {
           this.props.isOpen === this.props.name
             ? "projects-item projects-item-open"
             : "projects-item"
-        }>
+        }
+      >
         <ProjectInner
           name={this.props.name}
           isOpen={this.props.isOpen}
           description={this.props.description}
           image={this.props.image}
           link={this.props.link}
+          placeholder={this.props.placeholder}
         />{" "}
       </div>
     );
@@ -84,10 +90,22 @@ function ProjectInner(props) {
     <div className="project-inner">
       <h2 className="project-inner-header"> {props.name} </h2>{" "}
       <p className="project-inner-description"> {props.description} </p>{" "}
-      <a className="project-inner-button" href={props.link} target="_blank" rel="noreferrer">
+      <a
+        className="project-inner-button"
+        href={props.link}
+        target="_blank"
+        rel="noreferrer"
+      >
         See more
       </a>
-      <img className="project-inner-image" src={props.image} alt={props.name} />
+      <LazyLoadImage
+        className="project-inner-image"
+        src={props.image}
+        alt={props.name}
+        effect="blur"
+        placeholderSrc={props.placeholder}
+        wrapperClassName="project-inner-image"
+      />
     </div>
   );
 }

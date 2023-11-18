@@ -150,6 +150,13 @@
   }
 }
 
+.lazy-load-image-loaded {
+  grid-column: 2 / 4;
+  grid-row: 1 / 4;
+  max-height: 200px;
+  max-width: 100%;
+}
+
 /**
  * ----------------------------------------
  * animation scale-in-center
