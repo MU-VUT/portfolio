@@ -104,7 +104,6 @@ function ProjectInner(props) {
         alt={props.name}
         effect="blur"
         placeholderSrc={props.placeholder}
-        wrapperClassName="project-inner-image"
       />
     </div>
   );
