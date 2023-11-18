@@ -7,6 +7,31 @@ const mainProjects = [
     link: "https://esbp2023.com/",
   },
   {
+    name: "Emaily",
+    description: "React, Redux, NodeJS, Express, MongoDB",
+    image: "/img/emaily.png",
+    link: "https://github.com/MU-VUT/Emaily",
+  },
+  {
+    name: "Simple library",
+    description: "[WIP] NextJS, TypeScript, MaterialUI",
+    image: "/img/library.png",
+    link: "https://github.com/MU-VUT/simple-library",
+  },
+  {
+    name: "Simple FE framework",
+    description: "TypeScript, ES16 JS, Axios",
+    image: "/img/framework.png",
+    link: "https://github.com/MU-VUT/udemy-typescript-web-framework",
+  },
+  {
+    name: "Portfolio",
+    description: "React, Sass, Framer-motion",
+    image: "/img/portfolio.JPG",
+    placeholder: "/img/lowres/portfolio.JPG",
+    link: "#",
+  },
+  {
     name: "Hezký Boudy",
     description: "Adobe xD, Tailwind, UCDC",
     image: "/img/hb.JPG",
@@ -20,13 +45,7 @@ const mainProjects = [
     placeholder: "/img/lowres/vam.JPG",
     link: "https://mu-vut.github.io/",
   },
-  {
-    name: "Portfolio",
-    description: "React, Sass, Framer-motion",
-    image: "/img/portfolio.JPG",
-    placeholder: "/img/lowres/portfolio.JPG",
-    link: "#",
-  },
+
   {
     name: "Potravinové alergie",
     description: "Wordpress, Elementor",
