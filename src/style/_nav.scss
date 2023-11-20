@@ -61,6 +61,11 @@ nav {
   }
 }
 
+.active {
+  color: $secondaryColor;
+  transform: scale(1.15);
+}
+
 .active-item {
   color: $secondaryColor;
   transform: scale(1.15);
@@ -70,6 +75,9 @@ nav {
   font-size: 60px;
   &:hover {
     transform: scale(1);
+  }
+  @include mqmax(large) {
+    font-size: 22px;
   }
 }
 
