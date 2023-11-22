@@ -2,6 +2,9 @@
 nav {
   max-width: 60vw;
   margin: 50px;
+  @include mqmax(medium) {
+    margin: 0;
+  }
 }
 
 .nav-list {
@@ -11,7 +14,7 @@ nav {
   list-style: none;
   align-items: center;
 
-  @include mqmax(large) {
+  @include mqmax(medium) {
     flex-direction: column;
     gap: 10px;
   }
@@ -76,9 +79,16 @@ nav {
   &:hover {
     transform: scale(1);
   }
-  @include mqmax(large) {
+  @include mqmax(medium) {
     font-size: 22px;
   }
+}
+
+.nav-logo-responsive {
+  color: $fontColor;
+  font-size: 30px;
+  font-family: $fontPrimary;
+  letter-spacing: 0.05em;
 }
 
 .active-logo {

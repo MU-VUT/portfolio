@@ -49,5 +49,8 @@
       transform: scale(1.15);
       cursor: pointer;
     }
+    @include mqmax(large) {
+      font-size: 16px;
+    }
   }
 }

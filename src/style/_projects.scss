@@ -5,7 +5,7 @@
   flex-direction: column;
   flex-wrap: nowrap;
 
-  @include mqmax(large) {
+  @include mqmax(medium) {
     flex-direction: column;
     flex-wrap: wrap;
   }
@@ -20,6 +20,9 @@
   margin-bottom: 60px;
   margin-top: 100px;
   animation: container-scale 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  @include mqmax(medium) {
+    margin-bottom: 20px;
+  }
 
   &:nth-child(1) {
     margin-top: 0;
@@ -41,9 +44,10 @@
   align-items: center;
   //   padding: 12px;
   animation: container-scale 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-  @include mqmax(large) {
+  @include mqmax(medium) {
     display: flex;
     flex-direction: column;
+    row-gap: 25px;
   }
 }
 
@@ -83,7 +87,9 @@
     justify-content: left;
     z-index: 10;
     @include mqmax(large) {
-      width: 100%;
+      width: 95%;
+      height: fit-content;
+      justify-content: center !important;
     }
     &:hover {
       transform: none;
@@ -110,6 +116,10 @@
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: minmax(25%, auto);
   animation: scale-in-center 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  @include mqmax(large) {
+    grid-template-columns: 1fr;
+    grid-template-rows: max-content;
+  }
 
   &-header {
     font-family: $fontPrimary;
@@ -118,6 +128,9 @@
     margin-bottom: 12px;
     grid-column: 1;
     grid-row: 1;
+    @include mqmax(large) {
+      margin-bottom: 12px !important;
+    }
   }
   &-description {
     font-family: $fontSecondary;
@@ -133,9 +146,12 @@
     color: $primaryColor;
     text-decoration: none;
     transition: 0.3s;
-
     &:hover {
       color: $black;
+    }
+    @include mqmax(large) {
+      grid-row: 4;
+      text-align: center;
     }
   }
   &-image {
@@ -147,6 +163,13 @@
     margin: auto;
     box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.75);
     border-radius: 5px;
+    @include mqmax(large) {
+      grid-column: 1;
+      grid-row: 3;
+      margin-top: 5px;
+      margin-bottom: 5px;
+      text-align: center;
+    }
   }
 }
 
@@ -155,6 +178,13 @@
   grid-row: 1 / 4;
   max-height: 200px;
   max-width: 100%;
+  @include mqmax(large) {
+    grid-column: 1;
+    grid-row: 3;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    text-align: center;
+  }
 }
 
 /**

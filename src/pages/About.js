@@ -11,10 +11,9 @@ function About() {
   if (window.innerWidth > 1440) {
     return (
       <div className="about">
-        {" "}
         {numbers.map((number) => (
           <Ellipse key={number} number={number} />
-        ))}{" "}
+        ))}
         <Inner />
       </div>
     );
@@ -29,15 +28,15 @@ function About() {
 function Inner() {
   return (
     <div className="inner" style={{ zIndex: 10 }}>
-      <h2> Hi, my name is Michal. </h2>{" "}
+      <h2> Hi, my name is Michal. </h2>
       <p>
-        I am Front - end Developer from Brno, currently studying PhD in the field of Smart Logistic
-        Technologies.{" "}
-      </p>{" "}
+        I am Front - end Developer from Brno, currently studying PhD in the
+        field of Smart Logistic Technologies.
+      </p>
       <p>
-        I am interested in modern web technologies and web applications. I like to push things and
-        boundaries of knowledge forward.{" "}
-      </p>{" "}
+        I am interested in modern web technologies and web applications. I like
+        to push things and boundaries of knowledge forward.
+      </p>
     </div>
   );
 }
@@ -121,7 +120,8 @@ const Ellipse = ({ number }) => {
       onMouseEnter={handleHover}
       initial={{ opacity: 0 }}
       animate={{ opacity: active ? 0 : 1 }}
-      transition={{ type: "spring", stiffness: 50 }}>
+      transition={{ type: "spring", stiffness: 50 }}
+    >
       <motion.div
         style={{
           width: width[number],
@@ -136,9 +136,8 @@ const Ellipse = ({ number }) => {
           repeat: Infinity,
           duration: speeds[number],
         }}
-        className={"big"}>
-        {" "}
-      </motion.div>{" "}
+        className={"big"}
+      ></motion.div>
     </motion.div>
   );
 };

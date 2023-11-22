@@ -2,12 +2,20 @@ import React from "react";
 import { Outlet, NavLink } from "react-router-dom";
 
 const Nav = () => {
-  const about = window.innerWidth > 1440 ? "{MU}" : "About";
+  const logo = "{MU}";
+  const about = window.innerWidth > 860 ? logo : "About";
 
   return (
     <>
       <nav>
         <ul id="navList" className="nav-list">
+          <li>
+            {window.innerWidth > 860 ? (
+              ""
+            ) : (
+              <span className="nav-logo-responsive">{logo}</span>
+            )}
+          </li>
           <li>
             <NavLink to={"/projects"}>
               {({ isActive }) => (

@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const Start = () => {
   var logo = "{MU}";
 
-  if (window.innerWidth < 800) {
+  if (window.innerWidth < 860) {
     return (
       <div className="start">
         <h1> {logo} </h1> <h2> Welcome to my personal page! </h2>

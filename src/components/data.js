@@ -68,7 +68,7 @@ const sideProjects = [
     description: "Game design, Graphics, Testing",
     image: "/img/board.png",
     placeholder: "/img/lowres/board.png",
-    link: "href",
+    link: "#",
   },
   {
     name: "Video Ad",
