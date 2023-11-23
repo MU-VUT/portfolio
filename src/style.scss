@@ -5,6 +5,7 @@
 @use "style/curriculum" as *;
 @use "style/phaser" as *;
 @use "style/start" as *;
+@use "style/popup" as *;
 
 * {
   margin: 0;
@@ -41,6 +42,10 @@ body {
     height: auto;
     margin-top: 40px;
   }
+}
+
+.hidden {
+  visibility: hidden;
 }
 
 /**
