@@ -64,6 +64,13 @@ const mainProjects = [
 
 const sideProjects = [
   {
+    name: "Advent of Code",
+    description: "TypeScript, 36 of 50 stars",
+    image: "/img/aoc.png",
+    placeholder: "/img/lowres/aoc.png",
+    link: "https://github.com/MU-VUT/AoC",
+  },
+  {
     name: "Board Game",
     description: "Game design, Graphics, Testing",
     image: "/img/board.png",
