@@ -1,7 +1,7 @@
 @use "variables" as *;
 
 .popup {
-  position: absolute;
+  position: fixed;
   right: 2vw;
   bottom: 10vh;
   background-color: $grey;
