@@ -125,7 +125,7 @@ const cvItems = [
 const skillsItems = [
   {
     name: "front",
-    desc: "HTML, CSS, Sass, Tailwind, Bootstrap, Javascript, React, Redux, jQuery, Functional programming, SEO, SVG animation",
+    desc: "HTML, CSS, Sass, Tailwind, Bootstrap, Javascript, React, NextJS, Redux, jQuery, SVG animation",
   },
   {
     name: "back",
