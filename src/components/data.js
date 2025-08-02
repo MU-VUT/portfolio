@@ -40,7 +40,7 @@ const mainProjects = [
   },
   {
     name: "VAM",
-    description: "Vogel's approximation method, JavaScript",
+    description: "Angular, Springboot, OracleDB",
     image: "/img/vam.JPG",
     placeholder: "/img/lowres/vam.JPG",
     link: "https://mu-vut.github.io/",
@@ -102,17 +102,22 @@ const sideProjects = [
 
 const cvItems = [
   {
-    name: "2022 - now",
-    desc: "Freelance Front-end Web Developer",
+    name: "2024 - now",
+    desc: "Medior Angular Frontend Developer",
+    misc: "Papirfly",
   },
   {
-    name: "2020 - now",
-    desc: "PhD in Smart Logistic Technology",
-    misc: "Brno University of Technology",
+    name: "2022 - now",
+    desc: "Freelance Frontend Web Developer",
   },
   {
     name: "2019 - now",
     desc: "Scientific Researcher",
+    misc: "Brno University of Technology",
+  },
+  {
+    name: "2020 - 2025",
+    desc: "PhD study in Smart Logistic Technology",
     misc: "Brno University of Technology",
   },
   {
@@ -125,24 +130,25 @@ const cvItems = [
 const skillsItems = [
   {
     name: "front",
-    desc: "HTML, CSS, Sass, Tailwind, Bootstrap, Javascript, React, NextJS, Redux, jQuery, SVG animation",
+    desc: "HTML, CSS, Sass, Tailwind, Bootstrap, Javascript, Angular, RxJS, React, NextJS, Redux",
   },
   {
     name: "back",
-    desc: "Node.js, Express, MongoDB, PHP, SQL, Wordpress, RapidAPI",
+    desc: "Node.js, Express, Java/Kotlin, SpringBoot, PHP, SQL, MongoDB, OracleDB",
   },
-  { name: "build", desc: "npm, Babel, Webpack, OOP" },
-  { name: "devops", desc: "Docker, Kubernetes" },
+  { name: "build", desc: "npm, Babel, Webpack" },
+  { name: "devops", desc: "Docker, Kubernetes, AWS, Proxmox" },
   { name: "methodology", desc: "BEM, Atomic Design, Systematic approach" },
-  {
-    name: "science",
-    desc: "MatLab, Simulink, SciLab, Python, LaTeX, R, FEM analysis",
-  },
+  { name: "git", desc: "Github, Bitbucket, Gitlab" },
   {
     name: "softwares",
-    desc: "Photoshop, GIMP, Illustrator, Inkscape, Figma, xD, VSCode, Premiere Pro, Blender",
+    desc: "Figma, xD, Photoshop, GIMP, Illustrator, Inkscape, VSCode, Intellij IDEA, Premiere Pro, Blender",
   },
   { name: "languages", desc: "Czech, English" },
+  // {
+  //   name: "science",
+  //   desc: "MatLab, Simulink, SciLab, Python, LaTeX, R, FEM analysis",
+  // },
 ];
 
 export { mainProjects, sideProjects, cvItems, skillsItems };

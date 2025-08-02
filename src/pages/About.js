@@ -30,12 +30,13 @@ function Inner() {
     <div className="inner" style={{ zIndex: 10 }}>
       <h2> Hi, my name is Michal. </h2>
       <p>
-        I am Front - end Developer from Brno, currently studying PhD in the
-        field of Smart Logistic Technologies.
+        I am Frontend Developer from Brno, currently part of the FrontEnd
+        chapter development team in Papirfly. Working on Angular based Digital
+        Asset Management app.
       </p>
       <p>
-        I am interested in modern web technologies and web applications. I like
-        to push things and boundaries of knowledge forward.
+        I am interested in modern web technologies, web applications and games.
+        I like to push things and boundaries of knowledge forward.
       </p>
     </div>
   );
