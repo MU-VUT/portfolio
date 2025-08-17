@@ -42,8 +42,8 @@ const CVItems = () => {
             animate={{ opacity: 1 }}
             transition={{
               ease: "easeInOut",
-              duration: cvItems.length,
-              delay: window.innerWidth < 1440 ? 0.3 * i : 2 + 0.3 * i,
+              duration: cvItems.length / 2,
+              delay: 0.3 * i,
             }}
           >
             <h3 className="cv-item-header">{item.name}</h3>
@@ -91,8 +91,8 @@ const Skills = () => {
             animate={{ opacity: 1 }}
             transition={{
               ease: "easeInOut",
-              duration: cvItems.length,
-              delay: window.innerWidth < 1440 ? 0.3 * i : 2 + 0.3 * i,
+              duration: cvItems.length / 2,
+              delay: 0.3 * i,
             }}
           >
             <h3 className="skills-item-header">{item.name}</h3>

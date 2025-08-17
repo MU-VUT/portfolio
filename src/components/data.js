@@ -134,7 +134,7 @@ const skillsItems = [
   },
   {
     name: "back",
-    desc: "Node.js, Express, Java/Kotlin, SpringBoot, PHP, SQL, MongoDB, OracleDB",
+    desc: "Node.js, Express, GraphQL, Apollo, Java/Kotlin, SpringBoot, PHP, SQL, MongoDB, OracleDB",
   },
   { name: "build", desc: "npm, Babel, Webpack" },
   { name: "devops", desc: "Docker, Kubernetes, AWS, Proxmox" },
