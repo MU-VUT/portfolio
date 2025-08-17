@@ -130,11 +130,11 @@ const cvItems = [
 const skillsItems = [
   {
     name: "front",
-    desc: "HTML, CSS, Sass, Tailwind, Bootstrap, Javascript, Angular, RxJS, React, NextJS, Redux",
+    desc: "HTML, CSS, Sass, Tailwind, Bootstrap, Javascript, Angular, RxJS, React, NextJS, Redux, Apollo",
   },
   {
     name: "back",
-    desc: "Node.js, Express, GraphQL, Apollo, Java/Kotlin, SpringBoot, PHP, SQL, MongoDB, OracleDB",
+    desc: "Node.js, Express, REST, GraphQL, Java/Kotlin, SpringBoot, PHP, SQL, MongoDB, OracleDB",
   },
   { name: "build", desc: "npm, Babel, Webpack" },
   { name: "devops", desc: "Docker, Kubernetes, AWS, Proxmox" },
